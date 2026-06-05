@@ -1,82 +1,35 @@
-package puppy.code;
+package com.mygdx.game.screens;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.utils.ScreenUtils;
+import com.mygdx.game.ApproveOrDieGame;
+import com.mygdx.game.GameScreen;
 
-
-public class MainMenuScreen implements Screen {
-
-	final GameLluviaMenu game;
-	private SpriteBatch batch;
-	private BitmapFont font;
-	private OrthographicCamera camera;
-
-	public MainMenuScreen(final GameLluviaMenu game) {
-		this.game = game;
-        this.batch = game.getBatch();
-        this.font = game.getFont();
-		camera = new OrthographicCamera();
-		camera.setToOrtho(false, 800, 480);
+public class MainMenuScreen extends MenuBase {
+	
+	public MainMenuScreen(final ApproveOrDieGame game) {
+		super(game);
+	}
+	
+	@Override
+	public void show() {}
+	
+	@Override
+	protected void renderContent() {
+	    font.getData().setScale(2, 2);
+	    font.draw(batch, "Bienvenido a Approve or Die!!!", 100, camera.viewportHeight/2+50);
+	    font.draw(batch, "Este juego consiste en aprobar 4 ramos, ", 100, camera.viewportHeight/2+10);
+	    font.draw(batch, "necesitas 100pts para aprobar", 100, camera.viewportHeight/2-20);
+	    font.draw(batch, "cada uno, buena suerte!", 100, camera.viewportHeight/2-50);
+	    font.draw(batch, "Toca en cualquier lugar para comenzar!", 100, camera.viewportHeight/2-100);
+	    font.getData().setScale(1, 1); // reset!
 	}
 
 	@Override
-	public void render(float delta) {
-		ScreenUtils.clear(0, 0, 0.2f, 1);
-
-		camera.update();
-		batch.setProjectionMatrix(camera.combined);
-
-		batch.begin();
-		font.getData().setScale(2, 2);
-		font.draw(batch, "Bienvenido a Recolecta Gotas!!! ", 100, camera.viewportHeight/2+50);
-		font.draw(batch, "Toca en cualquier lugar para comenzar!", 100, camera.viewportHeight/2-50);
-
-		batch.end();
-
+	protected void handleInput() {
 		if (Gdx.input.isTouched()) {
 			game.setScreen(new GameScreen(game));
 			dispose();
 		}
-	}
-
-	@Override
-	public void show() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void resize(int width, int height) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void pause() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void resume() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void hide() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void dispose() {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
