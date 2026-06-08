@@ -1,7 +1,9 @@
 package com.mygdx.game.screens;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
@@ -12,6 +14,7 @@ public abstract class MenuBase implements Screen {
 	protected SpriteBatch batch;	   
 	protected BitmapFont font;
 	protected OrthographicCamera camera;
+	protected Texture background;
 	
 	public MenuBase(ApproveOrDieGame game) {
 		this.game = game;
@@ -19,6 +22,7 @@ public abstract class MenuBase implements Screen {
         this.font = game.getFont();
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, 800, 480);
+		background = new Texture(Gdx.files.internal(getBackgroundPath()));
 	}
 	
 	@Override
@@ -27,13 +31,21 @@ public abstract class MenuBase implements Screen {
 		camera.update();
 		batch.setProjectionMatrix(camera.combined);
 		batch.begin();
+		batch.draw(background, 0, 0, 800, 480);
 		renderContent();
 		batch.end();
 		handleInput();
 	}
-
+	
+	protected abstract String getBackgroundPath();
 	protected abstract void renderContent();
 	protected abstract void handleInput();
+	
+	@Override
+	public void show () {
+		// TODO Auto-generated method stub
+
+	}
 	
 	@Override
 	public void resize(int width, int height) {

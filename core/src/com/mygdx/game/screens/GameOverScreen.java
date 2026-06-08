@@ -13,6 +13,11 @@ public class GameOverScreen extends MenuBase {
 		super(game);
 		this.courseName = courseName;
 	}
+	
+	@Override
+	protected String getBackgroundPath() {
+		return "gameoverbackground.png";
+	}
 
 	@Override
 	public void show() {
