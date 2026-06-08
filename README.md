@@ -61,7 +61,7 @@ com.mygdx.game
     └── AudioManager.java
 ```
 ## Requirements
-- Java 8 or higher
+- Java 8 or higher ! ! (not working on Java 7, I tried idk why)
 - LibGDX 1.9.x
 - Gradle 7.3.3
 - Eclipse IDE (recommended)
