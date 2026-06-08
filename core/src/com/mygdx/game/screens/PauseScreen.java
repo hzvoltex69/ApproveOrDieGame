@@ -12,6 +12,12 @@ public class PauseScreen extends MenuBase {
 		super(game);
 		this.juego = juego;
 	}
+	
+	@Override
+	protected String getBackgroundPath() {
+		return "pausemenubackground.png";
+	}
+	
 	@Override
 	public void show() {}
 	

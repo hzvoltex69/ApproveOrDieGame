@@ -23,7 +23,11 @@ public class MainMenuScreen extends MenuBase {
 	    font.draw(batch, "Toca en cualquier lugar para comenzar!", 100, camera.viewportHeight/2-100);
 	    font.getData().setScale(1, 1); // reset!
 	}
-
+	
+	@Override
+	protected String getBackgroundPath() {
+		return "mainmenubackground.png";
+	}
 	@Override
 	protected void handleInput() {
 		if (Gdx.input.isTouched()) {

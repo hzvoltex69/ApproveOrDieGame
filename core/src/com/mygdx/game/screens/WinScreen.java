@@ -10,7 +10,12 @@ public class WinScreen extends MenuBase {
 	public WinScreen(final ApproveOrDieGame game) {
 		super(game);
 	}
-
+	
+	@Override
+	protected String getBackgroundPath() {
+		return "winscreenbackground.png";
+	}
+	
 	@Override
 	public void show() {
 		AudioManager.getInstance().playLevelUp();
