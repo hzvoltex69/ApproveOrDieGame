@@ -67,7 +67,7 @@ public class GameScreen implements Screen {
 	    camera.update();
 	    batch.setProjectionMatrix(camera.combined);
 	    batch.begin();
-	    batch.draw(background, 0, 0, 800, 400);
+	    batch.draw(background, 0, 0, 800, 480);
 	    font.draw(batch, "Gotas totales: " + student.getPuntos(), 5, 475);
 	    font.draw(batch, "Vidas: " + student.getVidas(), 670, 475);
 	    font.draw(batch, "Highest Course: " + (game.getHighestCourse() == 0 ? "-" : "Course " + game.getHighestCourse()), camera.viewportWidth/2-50, 475);
