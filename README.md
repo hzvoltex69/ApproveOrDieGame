@@ -21,7 +21,6 @@ grades or you'll lose lives!
 ## Controls
 - ← Left arrow — move left
 - → Right arrow — move right
-- Touch screen — interact with menus
 
 ## Built With
 - Java
@@ -79,11 +78,12 @@ git clone https://github.com/hzvoltex69/ApproveOrDieGame
 2. File → Import → Gradle → Existing Gradle Project
 3. Select the cloned folder
 4. Wait for Gradle to build
-5. Run `DesktopLauncher.java` in `desktop/src/com/mygdx/game/`
+5. Right click `DesktopLauncher.java` in `desktop/src/com/mygdx/game/`
+6. Run As → Java Application
 
 ## Authors
 - Patricio Quispe Aquino
 - Fernando Guerrero
 - Lucas Burria
 
-PUCV — Programacion Avanzada 1S 2026
+> PUCV — Programacion Avanzada 1S 2026
