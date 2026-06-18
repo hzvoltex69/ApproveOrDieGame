@@ -20,7 +20,7 @@ public abstract class Drop {
 		bounds.width = 64;
 		bounds.height = 64;
 	}
-
+	
 	public final void update(Student student) {
 		fall();
 		if (!student.estaHerido() && bounds.overlaps(student.getArea()))
@@ -32,7 +32,10 @@ public abstract class Drop {
 	}
 
 	protected abstract void onCollect(Student student);
-	protected abstract void animate(SpriteBatch batch);
+	
+	protected void animate(SpriteBatch batch) {
+    batch.draw(texture, bounds.x, bounds.y);
+	}
 
 	public void draw(SpriteBatch batch) {
 		animate(batch);

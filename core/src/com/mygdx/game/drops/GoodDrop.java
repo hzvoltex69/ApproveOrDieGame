@@ -1,7 +1,6 @@
 package com.mygdx.game.drops;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.mygdx.game.audio.AudioManager;
 import com.mygdx.game.entities.Student;
 
@@ -16,10 +15,5 @@ public class GoodDrop extends Drop {
 		collected = true;
 		student.sumarPuntos(10);
 		AudioManager.getInstance().playDrop();
-	}
-
-	@Override
-	protected void animate(SpriteBatch batch) {
-		batch.draw(texture, bounds.x, bounds.y);
 	}
 }

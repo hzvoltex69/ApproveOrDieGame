@@ -1,7 +1,6 @@
 package com.mygdx.game.drops;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.mygdx.game.audio.AudioManager;
 import com.mygdx.game.entities.Student;
 
@@ -15,10 +14,5 @@ public class PowerUpDrop extends Drop {
 	    collected = true;
 	    student.addLife();
 	    AudioManager.getInstance().playHeart();
-	}
-
-	@Override
-	protected void animate(SpriteBatch batch) {
-		batch.draw(texture, bounds.x, bounds.y);
 	}
 }
