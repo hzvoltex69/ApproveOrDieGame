@@ -9,7 +9,7 @@ public class Course {
 	private DropStrategy strategy;
 	private boolean locked;
 
-	public Course(String name, int scoreThreshold, DropStrategy strategy, boolean locked) {
+	protected Course(String name, int scoreThreshold, DropStrategy strategy, boolean locked) {
 		this.name = name;
 		this.scoreThreshold = scoreThreshold;
 		this.strategy = strategy;

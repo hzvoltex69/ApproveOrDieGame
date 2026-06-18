@@ -65,5 +65,6 @@ public class AudioManager {
 		hurtSound.dispose();
 		levelUpSound.dispose();
 		heartSound.dispose();
+		instance = null;
 	}
 }
