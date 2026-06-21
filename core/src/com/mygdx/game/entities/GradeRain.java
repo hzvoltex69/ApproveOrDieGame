@@ -7,10 +7,7 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.TimeUtils;
 import com.mygdx.game.audio.AudioManager;
 import com.mygdx.game.courses.DropStrategy;
-import com.mygdx.game.drops.BadDrop;
 import com.mygdx.game.drops.Drop;
-import com.mygdx.game.drops.GoodDrop;
-import com.mygdx.game.drops.PowerUpDrop;
 
 public class GradeRain implements Drawable {
 
@@ -38,15 +35,7 @@ public class GradeRain implements Drawable {
 	}
 
 	private void crearGrades(int vidas) {
-		float rand = MathUtils.random();
-		Drop drop;
-		if (rand < strategy.getBadDropChance())
-			drop = new BadDrop(badTexture, strategy.getDropSpeed());
-		else if (vidas < 3 && rand < strategy.getBadDropChance() + strategy.getPowerUpChance())
-			drop = new PowerUpDrop(powerUpTexture, strategy.getDropSpeed());
-		else
-			drop = new GoodDrop(goodTexture, strategy.getDropSpeed());
-
+		Drop drop = strategy.createDrop(goodTexture, badTexture, powerUpTexture, vidas);
 		drop.getBounds().x = MathUtils.random(0, 800 - 64);
 		drop.getBounds().y = 480;
 		drops.add(drop);
