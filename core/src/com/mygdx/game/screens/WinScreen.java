@@ -24,8 +24,8 @@ public class WinScreen extends MenuBase {
 	@Override
 	protected void renderContent() {
 		font.draw(batch, "Ganaste!!!", 100, 300);
-		font.draw(batch, "Felicidades por aprobar todos tus ramos!", 100, 250);
-		font.draw(batch, "Highest Course: Course " + game.getHighestCourse(), 100, 200);
+		font.draw(batch, "Felicidades por graduarte", 100, 250);
+		font.draw(batch, "Ahora, ojala encuentres trabajo jajaja", 100, 200);
 		font.draw(batch, "Toca en cualquier lado para reiniciar.", 100, 100);
 	}
 
