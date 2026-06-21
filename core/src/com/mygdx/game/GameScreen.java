@@ -70,7 +70,7 @@ public class GameScreen implements Screen {
 	    batch.draw(background, 0, 0, 800, 480);
 	    font.draw(batch, "Puntaje total: " + student.getPuntos(), 5, 475);
 	    font.draw(batch, "Vidas: " + student.getVidas(), 670, 475);
-	    font.draw(batch, "Mejor ramo: " + (game.getHighestCourse() == 0 ? "-" : "Ramo " + game.getHighestCourse()), camera.viewportWidth/2-50, 475);
+	    font.draw(batch, "Mejor ramo: " + (game.getHighestCourse() == 0 ? "-" : game.getHighestCourse()), camera.viewportWidth/2-50, 475);
 	    font.draw(batch, courses[currentCourse].getName() + ": " + student.getPuntos() + "/" + courses[currentCourse].getScoreThreshold(), 5, 455);
 
 	    if (!student.estaHerido()) {
