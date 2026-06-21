@@ -28,7 +28,7 @@ public class GameOverScreen extends MenuBase {
 	protected void renderContent() {
 		font.draw(batch, "REPROBASTE " + courseName + ", you are died JAJAJAJA", 100, 200);
 		font.draw(batch, "Toca en cualquier lado para reiniciar.", 100, 100);
-		font.draw(batch, "Mejor ramo: " + game.getHighestCourse(), 100, 300);
+		font.draw(batch, "Mejor ramo: " + game.getHighestCourse(), 100, 180);
 	}
 
 	@Override
