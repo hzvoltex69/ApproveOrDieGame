@@ -61,7 +61,7 @@ com.mygdx.game
     └── AudioManager.java
 ```
 ## Requirements
-- Java 8 or higher ! ! (not working on Java 7, I tried idk why)
+- Java 8 or higher 
 - LibGDX 1.9.x
 - Gradle 7.3.3
 - Eclipse IDE (recommended)
@@ -84,6 +84,5 @@ git clone https://github.com/hzvoltex69/ApproveOrDieGame
 ## Authors
 - Patricio Quispe Aquino
 - Fernando Guerrero
-- Lucas Burria
 
 > PUCV — Programacion Avanzada 1S 2026
